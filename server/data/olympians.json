@@ -1,0 +1,218 @@
+[
+  {
+    "year": 2024,
+    "athlete": {
+      "name": "Simone Biles",
+      "slug": "simone-biles",
+      "country": "USA",
+      "sport": "Gymnastics",
+      "medals": {
+        "gold": 3,
+        "silver": 1,
+        "bronze": 0
+      },
+      "story": "Simone Biles made a triumphant return to the Olympics in Paris 2024, securing three gold medals and one silver in gymnastics, bringing her total Olympic medal count to 11.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Simone_Biles",
+      "image": "simone-biles.jpg",
+      "videoId": "Xa8Mr-qL21o"
+    }
+  },
+  {
+    "year": 2022,
+    "athlete": {
+      "name": "Johannes Høsflot Klæbo",
+      "slug": "johannes-hosflot-klaebo",
+      "country": "Norway",
+      "sport": "Cross-Country Skiing",
+      "medals": {
+        "gold": 3,
+        "silver": 0,
+        "bronze": 1
+      },
+      "story": "Norwegian cross-country skier Johannes Høsflot Klæbo dominated the 2022 Winter Olympics in Beijing, winning three gold medals and one bronze, solidifying his status as one of the sport's greats.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Johannes_H%C3%B8sflot_Kl%C3%A6bo",
+      "image": "johannes-hosflot-klaebo.jpg",
+      "videoId": "uvteYflb_i0"
+    }
+  },
+  {
+    "year": 2021,
+    "athlete": {
+      "name": "Caeleb Dressel",
+      "slug": "caeleb-dressel",
+      "country": "USA",
+      "sport": "Swimming",
+      "medals": {
+        "gold": 5,
+        "silver": 0,
+        "bronze": 0
+      },
+      "story": "American swimmer Caeleb Dressel had a stellar performance at the Tokyo 2020 Olympics (held in 2021), winning five gold medals and setting multiple records.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Caeleb_Dressel",
+      "image": "caeleb-dressel.jpg",
+      "videoId": "zCKoAfNhM7c"
+    }
+  },
+  {
+    "year": 2018,
+    "athlete": {
+      "name": "Marit Bjørgen",
+      "slug": "marit-bjorgen",
+      "country": "Norway",
+      "sport": "Cross-Country Skiing",
+      "medals": {
+        "gold": 2,
+        "silver": 1,
+        "bronze": 2
+      },
+      "story": "Norwegian cross-country skier Marit Bjørgen became the most decorated Winter Olympian in history at PyeongChang 2018, adding five medals to her tally.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Marit_Bj%C3%B8rgen",
+      "image": "marit-bjorgen.jpg",
+      "videoId": "w2MCQgstpC0"
+    }
+  },
+  {
+    "year": 2016,
+    "athlete": {
+      "name": "Michael Phelps",
+      "slug": "michael-phelps",
+      "country": "USA",
+      "sport": "Swimming",
+      "medals": {
+        "gold": 5,
+        "silver": 1,
+        "bronze": 0
+      },
+      "story": "In his final Olympic appearance at Rio 2016, swimmer Michael Phelps added five golds and one silver to his record, finishing with a total of 28 Olympic medals.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Michael_Phelps",
+      "image": "michael-phelps.jpg",
+      "videoId": "UmIYanq5gH8"
+    }
+  },
+  {
+    "year": 2014,
+    "athlete": {
+      "name": "Viktor Ahn",
+      "slug": "viktor-ahn",
+      "country": "Russia",
+      "sport": "Short Track Speed Skating",
+      "medals": {
+        "gold": 3,
+        "silver": 0,
+        "bronze": 1
+      },
+      "story": "Short track speed skater Viktor Ahn, competing for Russia, won three golds and one bronze at Sochi 2014, becoming the most decorated short track skater in Olympic history.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Viktor_Ahn",
+      "image": "viktor-ahn.jpg",
+      "videoId": "F3L4zR-q2QM"
+    }
+  },
+  {
+    "year": 2012,
+    "athlete": {
+      "name": "Michael Phelps",
+      "slug": "michael-phelps",
+      "country": "USA",
+      "sport": "Swimming",
+      "medals": {
+        "gold": 4,
+        "silver": 2,
+        "bronze": 0
+      },
+      "story": "At the London 2012 Olympics, Michael Phelps became the most decorated Olympian of all time, surpassing the previous record with a total of 22 medals.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Michael_Phelps",
+      "image": "michael-phelps.jpg",
+      "videoId": "X7bj_LUIY7Y"
+    }
+  },
+  {
+    "year": 2010,
+    "athlete": {
+      "name": "Marit Bjørgen",
+      "slug": "marit-bjorgen",
+      "country": "Norway",
+      "sport": "Cross-Country Skiing",
+      "medals": {
+        "gold": 3,
+        "silver": 1,
+        "bronze": 1
+      },
+      "story": "Cross-country skier Marit Bjørgen led the medal count at Vancouver 2010, earning five medals and establishing herself as a dominant force in the sport.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Marit_Bj%C3%B8rgen",
+      "image": "marit-bjorgen.jpg",
+      "videoId": "HAysQt5ovMI"
+    }
+  },
+  {
+    "year": 2008,
+    "athlete": {
+      "name": "Michael Phelps",
+      "slug": "michael-phelps",
+      "country": "USA",
+      "sport": "Swimming",
+      "medals": {
+        "gold": 8,
+        "silver": 0,
+        "bronze": 0
+      },
+      "story": "Michael Phelps made history at Beijing 2008 by winning eight gold medals, breaking the record for the most golds in a single Olympics.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Michael_Phelps",
+      "image": "michael-phelps.jpg",
+      "videoId": "3o7I0FxFNeQ"
+    }
+  },
+  {
+    "year": 2006,
+    "athlete": {
+      "name": "Cindy Klassen",
+      "slug": "cindy-klassen",
+      "country": "Canada",
+      "sport": "Speed Skating",
+      "medals": {
+        "gold": 1,
+        "silver": 2,
+        "bronze": 2
+      },
+      "story": "Canadian speed skater Cindy Klassen became the first Canadian athlete to win five medals in a single Winter Olympics at Turin 2006.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cindy_Klassen",
+      "image": "cindy-klassen.jpg",
+      "videoId": "Ew-wAJ2Qppw"
+    }
+  },
+  {
+    "year": 2004,
+    "athlete": {
+      "name": "Michael Phelps",
+      "slug": "michael-phelps",
+      "country": "USA",
+      "sport": "Swimming",
+      "medals": {
+        "gold": 6,
+        "silver": 0,
+        "bronze": 2
+      },
+      "story": "In his first major Olympic appearance at Athens 2004, Michael Phelps won six golds and two bronzes, signaling the start of his Olympic dominance.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Michael_Phelps",
+      "image": "michael-phelps.jpg",
+      "videoId": "KqA7kTFurvg"
+    }
+  },
+  {
+    "year": 2002,
+    "athlete": {
+      "name": "Ole Einar Bjørndalen",
+      "slug": "ole-einar-bjorndalen",
+      "country": "Norway",
+      "sport": "Biathlon",
+      "medals": {
+        "gold": 4,
+        "silver": 0,
+        "bronze": 0
+      },
+      "story": "Norwegian biathlete Ole Einar Bjørndalen achieved a clean sweep at Salt Lake City 2002, winning gold in all four biathlon events.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ole_Einar_Bj%C3%B8rndalen",
+      "image": "ole-einar-bjorndalen.JPG",
+      "videoId": "uJig-pN-1o4"
+    }
+  }
+]
