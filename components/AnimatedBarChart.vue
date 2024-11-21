@@ -1,32 +1,27 @@
 <script setup>
 const { $gsap } = useNuxtApp()
-import Chart from "chart.js/auto";
-import { ref, onMounted } from "vue";
+import Chart from "chart.js/auto"
 
-// Fetch data from the endpoint
-const { data } = await useFetch("/api/olympians");
+const { data } = await useFetch("/api/olympians")
 
-// Function to aggregate medals
 function aggregateMedals(data) {
-  const aggregated = {};
+  const aggregated = {}
 
   data.forEach((entry) => {
-    const { name, medals, image } = entry.athlete;
+    const { name, medals, image } = entry.athlete
     if (!aggregated[name]) {
-      aggregated[name] = { gold: 0, silver: 0, bronze: 0, image };
+      aggregated[name] = { gold: 0, silver: 0, bronze: 0, image }
     }
-    aggregated[name].gold += medals.gold;
-    aggregated[name].silver += medals.silver;
-    aggregated[name].bronze += medals.bronze;
-  });
+    aggregated[name].gold += medals.gold
+    aggregated[name].silver += medals.silver
+    aggregated[name].bronze += medals.bronze
+  })
 
-  return aggregated;
+  return aggregated
 }
 
-// Aggregated data
-const aggregatedData = aggregateMedals(data.value);
+const aggregatedData = aggregateMedals(data.value)
 
-// Prepare data for Chart.js
 const chartData = ref({
   labels: ["Gold", "Silver", "Bronze"],
   datasets: Object.entries(aggregatedData).map(([name, medals]) => ({
@@ -34,27 +29,25 @@ const chartData = ref({
     data: [medals.gold, medals.silver, medals.bronze],
     backgroundColor: ["#FFD700", "#C0C0C0", "#CD7F32"]
   }))
-});
+})
 
-// Function to find the top medalist for a specific medal type
+
 function getTopMedalist(aggregatedData, medalType) {
   const topMedalist = Object.entries(aggregatedData).reduce(
     (max, [name, medals]) => {
       return medals[medalType] > max.count
         ? { name, count: medals[medalType], image: medals.image }
-        : max;
+        : max
     },
     { name: null, count: 0, image: null }
-  );
-  return topMedalist;
+  )
+  return topMedalist
 }
 
-// Get top medalists
-const topGoldMedalist = ref(getTopMedalist(aggregatedData, "gold"));
-const topSilverMedalist = ref(getTopMedalist(aggregatedData, "silver"));
-const topBronzeMedalist = ref(getTopMedalist(aggregatedData, "bronze"));
+const topGoldMedalist = ref(getTopMedalist(aggregatedData, "gold"))
+const topSilverMedalist = ref(getTopMedalist(aggregatedData, "silver"))
+const topBronzeMedalist = ref(getTopMedalist(aggregatedData, "bronze"))
 
-// Chart options
 const chartOptions = {
   responsive: true,
   maintainAspectRatio: false,
@@ -64,14 +57,12 @@ const chartOptions = {
   },
   plugins: {
     legend: {
-      display: true,
-      position: "top"
+      display: false,
     }
   }
-};
+}
 
-// Render the chart
-const chartCanvas = ref(null);
+const chartCanvas = ref(null)
 onMounted(() => {
   $gsap.to('.title', { y: 0, opacity: 1, duration: 0.5, scrollTrigger: { trigger: '.medal', start: 'top 80%' }  })
   $gsap.to('.medalist-card ', { opacity: 1, y: 0, duration: 0.5, stagger: 0.2, scrollTrigger: { trigger: '.medal', start: 'top 80%' }  })
@@ -82,8 +73,8 @@ onMounted(() => {
       datasets: chartData.value.datasets
     },
     options: chartOptions
-  });
-});
+  })
+})
 </script>
 
 <template>

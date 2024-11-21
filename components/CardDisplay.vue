@@ -10,22 +10,56 @@ const setActiveItem = async (id, year) => {
   await nextTick()
 
   const cardElement = document.querySelector(`[data-slug="${id}"][data-year="${year}"]`)
+
   if (cardElement) {
     $gsap.to("#card-items", {
-      scrollTo: { y: cardElement, offsetY: 10, x: cardElement, offsetX: 10 },
+      scrollTo: {
+        y: cardElement,
+        offsetY: 10,
+        x: cardElement,
+        offsetX: 10
+      },
       duration: 0.8,
       ease: "power2.out",
     })
   }
 
-  $gsap.to('.medal', { scale: 1, opacity: 1, duration: 2, stagger: 0.2, scrollTrigger: { trigger: '.medal', start: 'top 80%' } })
-  $gsap.to('.main-image', { opacity: 1, y: 0, duration: 1, scrollTrigger: { trigger: '.main-image', start: 'top 80%' } })
-  $gsap.to('.opacity-in ', { opacity: 1, duration: 3, stagger: 0.2, scrollTrigger: { trigger: '.medal', start: 'top 80%' }  })
+  $gsap.to('.medal', {
+    scale: 1,
+    opacity: 1,
+    duration: 2,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: '.medal',
+      start: 'top 60%'
+    }
+  })
+  $gsap.to('.main-image', {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    scrollTrigger: {
+      trigger: '.main-image',
+      start: 'top 60%'
+    }
+  })
+  $gsap.to('.opacity-in ', {
+    opacity: 1,
+    duration: 3,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: '.medal',
+      start: 'top 60%'
+    }
+  })
 }
 
 const close = () => {
   activeItem.value = null
-  window.scrollTo({ top: 0, behavior: 'smooth' })
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
 }
 
 const activeCard = (slug, year) => {
@@ -33,7 +67,12 @@ const activeCard = (slug, year) => {
 }
 
 onMounted(() => {
-  $gsap.to('.card', { scale: 1, opacity: 1, duration: 1, stagger: 0.1 })
+  $gsap.to('.card', {
+    scale: 1,
+    opacity: 1,
+    duration: 1,
+    stagger: 0.1
+  })
 })
 </script>
 <template>
@@ -71,13 +110,19 @@ onMounted(() => {
             <NuxtImg :src="`/images/${activeItem.athlete.image}`"
               class="translate-y-10 opacity-0 object-fit rounded-2xl main-image"
             />
+            <div class="mt-6 lg:hidden">
+              <button @click="close" class="flex items-center gap-1">
+                <svg-close class="w-8 h-8 text-gray-100" /> close card
+              </button>
+            </div>
           </div>
         </div>
         <div class="relative order-1 pt-6 basis-2/3 lg:order-2 lg:pt-0">
           <div class="max-w-[75ch] text-gray-100">
-            <h1 class="opacity-in opacity-0 font-display leading-[1.1]"><span class="block text-[90px] lg:text-[160px] text-gray-700">{{ activeItem.year }}</span>
-
-              <span class="block text-5xl lg:text-[80px]">{{ activeItem.athlete.name }}</span></h1>
+            <h1 class="opacity-in opacity-0 font-display leading-[1.1]">
+              <span class="block text-[90px] lg:text-[160px] text-gray-700">{{ activeItem.year }}</span>
+              <span class="block text-5xl lg:text-[80px]">{{ activeItem.athlete.name }}</span>
+            </h1>
             <h2 class="flex items-center gap-2 mb-8 text-2xl opacity-0 opacity-in lg:text-4xl font-display"> <flag :country="activeItem.athlete.country" class="h-6" /> {{ activeItem.athlete.sport }}</h2>
             <div class="flex items-center justify-between gap-6 mb-6">
               <p class="p-4 text-center text-white bg-gray-700 rounded opacity-0 medal">
@@ -118,8 +163,9 @@ onMounted(() => {
             </div>
             <p class="mb-12 text-lg leading-normal text-gray-200 opacity-0 opacity-in">{{ activeItem.athlete.story }}</p>
             <NuxtLink :to="activeItem.athlete.wikipedia" target="_blank" class="flex items-center gap-1">
-              <svg-wikipedia class="w-6 h-6" /> <span>Read more on Wikipedia</span></NuxtLink>
-            <div class="absolute -bottom-1 right-2 lg:top-0">
+              <svg-wikipedia class="w-6 h-6" /> <span>Read more on Wikipedia</span>
+            </NuxtLink>
+            <div class="absolute hidden lg:block -bottom-1 right-2 lg:top-0">
               <button @click="close" class="flex items-center gap-1">
                 <svg-close class="w-8 h-8 text-gray-100" /> close
               </button>

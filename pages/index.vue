@@ -1,4 +1,3 @@
-<script setup></script>
 <template>
   <div
     class="relative p-4 antialiased text-white bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900"
