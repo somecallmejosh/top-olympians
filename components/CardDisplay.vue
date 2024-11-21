@@ -75,8 +75,10 @@ onMounted(() => {
         </div>
         <div class="relative order-1 pt-6 basis-2/3 lg:order-2 lg:pt-0">
           <div class="max-w-[75ch] text-gray-100">
-            <h1 class="opacity-in opacity-0 font-display leading-[1.1]"><span class="block text-[90px] lg:text-[160px] text-gray-700">{{ activeItem.year }}</span> <span class="block text-5xl lg:text-[80px]">{{ activeItem.athlete.sport }}</span></h1>
-            <h2 class="mb-8 text-2xl opacity-0 opacity-in lg:text-4xl font-display">{{ activeItem.athlete.name }} - {{  activeItem.athlete.country }}</h2>
+            <h1 class="opacity-in opacity-0 font-display leading-[1.1]"><span class="block text-[90px] lg:text-[160px] text-gray-700">{{ activeItem.year }}</span>
+
+              <span class="block text-5xl lg:text-[80px]">{{ activeItem.athlete.name }}</span></h1>
+            <h2 class="mb-8 text-2xl opacity-0 opacity-in lg:text-4xl font-display">{{ activeItem.athlete.sport }} - {{  activeItem.athlete.country }}</h2>
             <div class="flex items-center justify-between gap-6 mb-6">
               <p class="p-4 text-center text-white bg-gray-700 rounded opacity-0 medal">
                 <span class="block text-sm">Metal Count</span>
