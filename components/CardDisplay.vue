@@ -31,7 +31,7 @@ const setActiveItem = async (id, year) => {
     stagger: 0.2,
     scrollTrigger: {
       trigger: '.medal',
-      start: 'top 60%'
+      start: 'top 85%'
     }
   })
   $gsap.to('.main-image', {
@@ -40,7 +40,7 @@ const setActiveItem = async (id, year) => {
     duration: 1,
     scrollTrigger: {
       trigger: '.main-image',
-      start: 'top 60%'
+      start: 'top 85%'
     }
   })
   $gsap.to('.opacity-in ', {
@@ -49,7 +49,7 @@ const setActiveItem = async (id, year) => {
     stagger: 0.2,
     scrollTrigger: {
       trigger: '.medal',
-      start: 'top 60%'
+      start: 'top 85%'
     }
   })
 }
