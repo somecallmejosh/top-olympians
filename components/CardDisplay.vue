@@ -70,7 +70,7 @@ onMounted(() => {
               <div class="flex-1 space-y-2">
                 <ul
                   v-if="activeItem.athlete.medals.gold"
-                  class="flex gap-2 mb-2"
+                  class="flex flex-wrap gap-2 mb-2"
                 >
                   <li class="opacity-0 medal" v-for="i in activeItem.athlete.medals.gold" :key="`gold-${i}`">
                     <svg-gold-medal class="w-6 h-6" />
@@ -79,7 +79,7 @@ onMounted(() => {
                 </ul>
                 <ul
                   v-if="activeItem.athlete.medals.silver"
-                  class="flex gap-2 mb-2"
+                  class="flex flex-wrap gap-2 mb-2"
                 >
                   <li class="opacity-0 medal" v-for="i in activeItem.athlete.medals.silver" :key="`silver-${i}`">
                     <svg-silver-medal class="w-6 h-6" />
@@ -88,7 +88,7 @@ onMounted(() => {
                 </ul>
                 <ul
                   v-if="activeItem.athlete.medals.bronze"
-                  class="flex gap-2 mb-2"
+                  class="flex flex-wrap gap-2"
                 >
                   <li class="opacity-0 medal" v-for="i in activeItem.athlete.medals.bronze" :key="`bronze-${i}`">
                     <svg-bronze-medal class="w-6 h-6" />
