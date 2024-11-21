@@ -7,7 +7,7 @@
           <NuxtLink to="/" class="text-xl font-display ">Olympic Legends</NuxtLink>
         </div>
         <div class="flex gap-4">
-          <NuxtLink to="#leaderboard" class="">Leaderboard</NuxtLink>
+          <a href="#leaderboard" class="">Leaderboard</a>
         </div>
       </nav>
     </header>
@@ -15,3 +15,8 @@
     <NuxtPage />
   </div>
 </template>
+<style>
+html {
+  scroll-behavior: smooth;
+}
+</style>

@@ -87,7 +87,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="relative px-4 py-8 -mx-4 space-y-6 lg:space-y-12 lg:-mx-4 lg:px-32 lg:py-20 bg-gradient-to-b from-gray-50 via-gray-100 to-gray-50">
+  <div id="leaderboard" class="relative px-4 py-8 -mx-4 space-y-6 lg:space-y-12 lg:-mx-4 lg:px-32 lg:py-20 bg-gradient-to-b from-gray-50 via-gray-100 to-gray-50">
     <h2 class="text-4xl text-gray-900 translate-y-2 opacity-0 title lg:text-7xl font-display">Top Medalists of the <br>Last Two Decades</h2>
     <div class="relative z-10 flex flex-col items-center gap-12 lg:flex-row">
       <div class="w-full space-y-6 text-gray-900 lg:w-auto">
@@ -100,8 +100,8 @@ onMounted(() => {
                 </div>
               </div>
               <div class="space-y-1 text-center">
-                <p class="text-sm">{{ topGoldMedalist.name }}</p>
-                <p class="flex items-center gap-1 text-xs"><svg-gold-medal class="w-4 h-4" />{{ topGoldMedalist.count }} gold medals</p>
+                <p class="text-xs sm:text-sm">{{ topGoldMedalist.name }}</p>
+                <p class="flex items-center gap-1 text-xs"><svg-gold-medal class="hidden w-4 h-4 sm:block" />{{ topGoldMedalist.count }} gold medals</p>
               </div>
             </div>
           </li>
@@ -113,8 +113,9 @@ onMounted(() => {
                 </div>
               </div>
               <div class="space-y-1 text-center">
-                <p class="text-sm">{{ topSilverMedalist.name }}</p>
-                <p class="flex items-center gap-1 text-xs"><svg-silver-medal class="w-4 h-4" />{{ topSilverMedalist.count }} silver medals</p>
+                <p class="text-xs sm:text-sm">{{ topSilverMedalist.name }}</p>
+                <p class="flex items-center gap-1 text-xs">
+                  <svg-silver-medal class="hidden w-4 h-4 sm:block" />{{ topSilverMedalist.count }} silver medals</p>
               </div>
             </div>
           </li>
@@ -126,8 +127,8 @@ onMounted(() => {
                 </div>
               </div>
               <div class="space-y-1 text-center">
-                <p class="text-sm">{{ topBronzeMedalist.name }}</p>
-                <p class="flex items-center gap-1 text-xs"><svg-bronze-medal class="w-4 h-4" />{{ topBronzeMedalist.count }} bronze medals</p>
+                <p class="text-xs sm:text-sm">{{ topBronzeMedalist.name }}</p>
+                <p class="flex items-center gap-1 text-xs"><svg-bronze-medal class="hidden w-4 h-4 sm:block" />{{ topBronzeMedalist.count }} bronze medals</p>
               </div>
             </div>
           </li>

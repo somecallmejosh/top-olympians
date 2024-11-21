@@ -7,10 +7,17 @@ const setActiveItem = async (id, year) => {
   const item = data.value.find((item) => item.athlete.slug === id && item.year === year)
   activeItem.value = item
 
+
   await nextTick()
   $gsap.to('.medal', { scale: 1, opacity: 1, duration: 2, stagger: 0.2, scrollTrigger: { trigger: '.medal', start: 'top 80%' } })
   $gsap.to('.main-image', { opacity: 1, y: 0, duration: 1})
   $gsap.to('.opacity-in ', { opacity: 1, duration: 3, stagger: 0.2, scrollTrigger: { trigger: '.medal', start: 'top 80%' }  })
+}
+
+const close = () => {
+  activeItem.value = null
+  // scroll to top of page
+  window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
 onMounted(() => {
@@ -26,7 +33,7 @@ onMounted(() => {
         class="flex gap-6 py-4"
         :class="activeItem ? 'lg:flex-col' : 'overflow-scroll scrollbar-hidden snap-x'"
       >
-        <li v-for="item in data" class="card aspect-[5/7.5] relative basis-40 shrink-0 snap-center opacity-0 scale-75">
+        <li v-for="item in data" class="card aspect-[5/7.5] relative basis-32 lg:basis-40 shrink-0 snap-center opacity-0 scale-75">
           <button @click="setActiveItem(item.athlete.slug, item.year)" class="w-full h-full overflow-hidden duration-500 rounded-2xl group focus:outline-dotted outline-offset-2 outline-2">
             <NuxtImg :src="`/images/${item.athlete.image}`" height="320" width="213"
               class="overflow-hidden transition-all duration-300 scale-110 object-fit group-hover:scale-100 grayscale group-hover:grayscale-0 group-focus:grayscale-0 rounded-2xl"
@@ -93,8 +100,8 @@ onMounted(() => {
             <p class="mb-12 text-lg leading-normal text-gray-200 opacity-0 opacity-in">{{ activeItem.athlete.story }}</p>
             <NuxtLink :to="activeItem.athlete.wikipedia" target="_blank" class="flex items-center gap-1">
               <svg-wikipedia class="w-6 h-6" /> <span>Read more on Wikipedia</span></NuxtLink>
-            <div class="absolute top-0 right-0">
-              <button @click="activeItem = null" class="flex items-center gap-1">
+            <div class="absolute -bottom-1 right-2 lg:top-0">
+              <button @click="close" class="flex items-center gap-1">
                 <svg-close class="w-8 h-8 text-gray-100" /> close
               </button>
             </div>
