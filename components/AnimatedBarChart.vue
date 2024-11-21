@@ -87,7 +87,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="leaderboard" class="relative px-4 py-8 -mx-4 space-y-6 lg:space-y-12 lg:-mx-4 lg:px-32 lg:py-20 bg-gradient-to-b from-gray-50 via-gray-100 to-gray-50">
+  <div id="leaderboard" class="relative px-4 py-8 -mx-4 space-y-6 lg:space-y-12 lg:-mx-4 lg:px-32 lg:py-20 bg-gradient-to-b from-gray-50 via-gray-100 to-gray-50 scroll-m-20">
     <h2 class="text-4xl text-gray-900 translate-y-2 opacity-0 title lg:text-7xl font-display">Top Medalists of the <br>Last Two Decades</h2>
     <div class="relative z-10 flex flex-col items-center gap-12 lg:flex-row">
       <div class="w-full space-y-6 text-gray-900 lg:w-auto">
