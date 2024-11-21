@@ -7,9 +7,6 @@
     <CardDisplay />
     <div class="relative z-10">
       <AnimatedBarChart />
-      <!-- <LeaderBoardSection /> -->
-      <!-- <h1 class="text-[100px] font-display leading-tight"><span class="block">Top Olypmic Medalists</span> <span class="block">of the Last 20 Years</span></h1> -->
     </div>
-
   </div>
 </template>
