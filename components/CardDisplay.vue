@@ -65,7 +65,7 @@ onMounted(() => {
     </div>
     <div id="card-content" v-if="activeItem" :key="`${activeItem.athlete.slug}${activeItem.year}`" class="relative z-10 w-full mb-12 wrapper">
       <div class="flex flex-col w-full gap-12 lg:flex-row">
-        <div class="basis-1/3 shrink-0">
+        <div class="order-2 basis-1/3 shrink-0 lg:order-1">
           <div
             class="aspect-[5/7.5]">
             <NuxtImg :src="`/images/${activeItem.athlete.image}`"
@@ -73,7 +73,7 @@ onMounted(() => {
             />
           </div>
         </div>
-        <div class="relative basis-2/3">
+        <div class="relative order-1 pt-6 basis-2/3 lg:order-2 lg:pt-0">
           <div class="max-w-[75ch] text-gray-100">
             <h1 class="opacity-in opacity-0 font-display leading-[1.1]"><span class="block text-[90px] lg:text-[160px] text-gray-700">{{ activeItem.year }}</span> <span class="block text-5xl lg:text-[80px]">{{ activeItem.athlete.sport }}</span></h1>
             <h2 class="mb-8 text-2xl opacity-0 opacity-in lg:text-4xl font-display">{{ activeItem.athlete.name }} - {{  activeItem.athlete.country }}</h2>
