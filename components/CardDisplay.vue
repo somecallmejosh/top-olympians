@@ -8,9 +8,9 @@ const setActiveItem = async (id, year) => {
   activeItem.value = item
 
   await nextTick()
-  $gsap.to('.medal', { scale: 1, opacity: 1, duration: 2, stagger: 0.2 })
-  $gsap.to('.main-image', { opacity: 1, y: 0, duration: 1 })
-  $gsap.to('.opacity-in ', { opacity: 1, duration: 3, stagger: 0.2 })
+  $gsap.to('.medal', { scale: 1, opacity: 1, duration: 2, stagger: 0.2, scrollTrigger: { trigger: '.medal', start: 'top 80%' } })
+  $gsap.to('.main-image', { opacity: 1, y: 0, duration: 1})
+  $gsap.to('.opacity-in ', { opacity: 1, duration: 3, stagger: 0.2, scrollTrigger: { trigger: '.medal', start: 'top 80%' }  })
 }
 
 onMounted(() => {

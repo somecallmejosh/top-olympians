@@ -73,8 +73,8 @@ const chartOptions = {
 // Render the chart
 const chartCanvas = ref(null);
 onMounted(() => {
-  $gsap.to('.title', { y: 0, opacity: 1, duration: 0.5 })
-  $gsap.to('.medalist-card ', { opacity: 1, y: 0, duration: 0.5, stagger: 0.2 })
+  $gsap.to('.title', { y: 0, opacity: 1, duration: 0.5, scrollTrigger: { trigger: '.medal', start: 'top 80%' }  })
+  $gsap.to('.medalist-card ', { opacity: 1, y: 0, duration: 0.5, stagger: 0.2, scrollTrigger: { trigger: '.medal', start: 'top 80%' }  })
   new Chart(chartCanvas.value, {
     type: "bar",
     data: {
