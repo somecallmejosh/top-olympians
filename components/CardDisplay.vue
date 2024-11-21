@@ -19,7 +19,7 @@ const setActiveItem = async (id, year) => {
   }
 
   $gsap.to('.medal', { scale: 1, opacity: 1, duration: 2, stagger: 0.2, scrollTrigger: { trigger: '.medal', start: 'top 80%' } })
-  $gsap.to('.main-image', { opacity: 1, y: 0, duration: 1})
+  $gsap.to('.main-image', { opacity: 1, y: 0, duration: 1, scrollTrigger: { trigger: '.main-image', start: 'top 80%' } })
   $gsap.to('.opacity-in ', { opacity: 1, duration: 3, stagger: 0.2, scrollTrigger: { trigger: '.medal', start: 'top 80%' }  })
 }
 
