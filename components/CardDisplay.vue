@@ -7,8 +7,17 @@ const setActiveItem = async (id, year) => {
   const item = data.value.find((item) => item.athlete.slug === id && item.year === year)
   activeItem.value = item
 
-
   await nextTick()
+
+  const cardElement = document.querySelector(`[data-slug="${id}"][data-year="${year}"]`)
+  if (cardElement) {
+    $gsap.to("#card-items", {
+      scrollTo: { y: cardElement, offsetY: 10, x: cardElement, offsetX: 10 },
+      duration: 0.8,
+      ease: "power2.out",
+    })
+  }
+
   $gsap.to('.medal', { scale: 1, opacity: 1, duration: 2, stagger: 0.2, scrollTrigger: { trigger: '.medal', start: 'top 80%' } })
   $gsap.to('.main-image', { opacity: 1, y: 0, duration: 1})
   $gsap.to('.opacity-in ', { opacity: 1, duration: 3, stagger: 0.2, scrollTrigger: { trigger: '.medal', start: 'top 80%' }  })
@@ -16,8 +25,11 @@ const setActiveItem = async (id, year) => {
 
 const close = () => {
   activeItem.value = null
-  // scroll to top of page
   window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
+const activeCard = (slug, year) => {
+  return activeItem.value && activeItem.value.athlete.slug === slug && activeItem.value.year === year
 }
 
 onMounted(() => {
@@ -26,27 +38,32 @@ onMounted(() => {
 </script>
 <template>
   <div :class="activeItem && 'lg:flex lg:gap-12 lg:py-12'">
-    <div class="relative transition-all duration-300"
-      :class="activeItem && 'lg:w-72 lg:max-h-[740px] lg:-my-4 lg:px-4 overflow-scroll snap-y scrollbar-hidden'"
+    <div id="card-items" class="relative transition-all duration-300"
+      :class="activeItem && 'lg:w-72 lg:max-h-[740px] lg:-my-4 lg:px-4 overflow-scroll scrollbar-hidden'"
     >
       <ul
         class="flex gap-6 py-4"
-        :class="activeItem ? 'lg:flex-col' : 'overflow-scroll scrollbar-hidden snap-x'"
+        :class="activeItem ? 'lg:flex-col' : 'overflow-scroll scrollbar-hidden'"
       >
-        <li v-for="item in data" class="card aspect-[5/7.5] relative basis-32 lg:basis-40 shrink-0 snap-center opacity-0 scale-75">
-          <button @click="setActiveItem(item.athlete.slug, item.year)" class="w-full h-full overflow-hidden duration-500 rounded-2xl group focus:outline-dotted outline-offset-2 outline-2">
+        <li v-for="item in data"
+          :key="item.athlete.slug"
+          :data-slug="item.athlete.slug"
+          :data-year="item.year"
+          class="card aspect-[5/7.5] relative basis-32 lg:basis-40 shrink-0 snap-center opacity-0 scale-75">
+          <button @click="setActiveItem(item.athlete.slug, item.year)" class="block w-full h-full overflow-hidden duration-500 rounded-2xl group focus:outline-dotted outline-offset-2 outline-2">
             <NuxtImg :src="`/images/${item.athlete.image}`" height="320" width="213"
-              class="overflow-hidden transition-all duration-300 scale-110 object-fit group-hover:scale-100 grayscale group-hover:grayscale-0 group-focus:grayscale-0 rounded-2xl"
-              loading="lazy" />
+              class="overflow-hidden transition-all duration-300 scale-110 group-hover:scale-100 group-focus:scale-100 object-fit rounded-2xl"
+              loading="lazy"
+              :class="activeCard(item.athlete.slug, item.year) ? 'grayscale-0' : 'grayscale group-focus:grayscale-0 group-hover:grayscale-0'"
+            />
             <p
-              class="absolute right-0 p-2 text-xl text-right text-gray-900 transition-colors duration-500 bg-white/90 font-display rounded-tl-2xl rounded-br-2xl group-hover:bg-white"
-              :class="activeItem ? 'bottom-0' : 'bottom-1.5'"
+              class="absolute bottom-0 right-0 p-2 text-xl text-right text-gray-900 transition-colors duration-500 bg-white/90 font-display rounded-tl-2xl rounded-br-2xl group-hover:bg-white"
             >{{ item.year }}</p>
           </button>
         </li>
       </ul>
     </div>
-    <div v-if="activeItem" :key="`${activeItem.athlete.slug}${activeItem.year}`" class="relative z-10 w-full mb-12 wrapper">
+    <div id="card-content" v-if="activeItem" :key="`${activeItem.athlete.slug}${activeItem.year}`" class="relative z-10 w-full mb-12 wrapper">
       <div class="flex flex-col w-full gap-12 lg:flex-row">
         <div class="basis-1/3 shrink-0">
           <div
