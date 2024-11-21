@@ -20,11 +20,20 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     '@nuxtjs/google-fonts',
-    '@vueuse/motion/nuxt'
+    '@vueuse/motion/nuxt',
+    '@hypernym/nuxt-gsap',
   ],
   googleFonts: {
     families: {
-      'Rakkas': [400],
+      Rakkas: [400],
+    },
+  },
+  gsap: {
+    extraPlugins: {
+      scrollTrigger: true,
+      scrollTo: true,
+      motionPath: true,
+      text: true,
     },
   },
   tailwindcss: {

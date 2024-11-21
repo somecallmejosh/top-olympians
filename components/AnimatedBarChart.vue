@@ -1,4 +1,5 @@
 <script setup>
+const { $gsap } = useNuxtApp()
 import Chart from "chart.js/auto";
 import { ref, onMounted } from "vue";
 
@@ -72,6 +73,8 @@ const chartOptions = {
 // Render the chart
 const chartCanvas = ref(null);
 onMounted(() => {
+  $gsap.to('.title', { y: 0, opacity: 1, duration: 0.5 })
+  $gsap.to('.medalist-card ', { opacity: 1, y: 0, duration: 0.5, stagger: 0.2 })
   new Chart(chartCanvas.value, {
     type: "bar",
     data: {
@@ -85,11 +88,11 @@ onMounted(() => {
 
 <template>
   <div class="relative px-4 py-8 -mx-4 space-y-6 lg:space-y-12 lg:-mx-4 lg:px-32 lg:py-20 bg-gradient-to-b from-gray-50 via-gray-100 to-gray-50">
-    <h2 class="text-4xl text-gray-900 lg:text-7xl font-display">Top Medalists of the <br>Last Two Decades</h2>
+    <h2 class="text-4xl text-gray-900 translate-y-2 opacity-0 title lg:text-7xl font-display">Top Medalists of the <br>Last Two Decades</h2>
     <div class="relative z-10 flex flex-col items-center gap-12 lg:flex-row">
       <div class="w-full space-y-6 text-gray-900 lg:w-auto">
         <ul class="grid grid-cols-3 gap-1 lg:gap-4 lg:grid-cols-1">
-          <li class="p-2 rounded-lg bg-gray-200/50">
+          <li class="p-2 translate-y-10 rounded-lg opacity-0 medalist-card bg-gray-200/50">
             <div class="flex flex-col items-center gap-2 lg:flex-row">
               <div class="w-20">
                 <div class="overflow-hidden aspect-[1/1] rounded-full border-2 border-yellow-400">
@@ -102,7 +105,7 @@ onMounted(() => {
               </div>
             </div>
           </li>
-          <li class="p-2 rounded-lg bg-gray-200/50">
+          <li class="p-2 translate-y-10 rounded-lg opacity-0 medalist-card bg-gray-200/50">
              <div class="flex flex-col items-center gap-2 lg:flex-row">
               <div class="w-20">
                 <div class="overflow-hidden aspect-[1/1] rounded-full border-2 border-gray-300">
@@ -115,7 +118,7 @@ onMounted(() => {
               </div>
             </div>
           </li>
-          <li class="p-2 rounded-lg bg-gray-200/50">
+          <li class="p-2 translate-y-10 rounded-lg opacity-0 medalist-card bg-gray-200/50">
              <div class="flex flex-col items-center gap-2 lg:flex-row">
               <div class="w-20">
                 <div class="overflow-hidden aspect-[1/1] rounded-full border-2 border-orange-600">
