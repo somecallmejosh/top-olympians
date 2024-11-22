@@ -23,7 +23,7 @@ function aggregateMedals(data) {
 const aggregatedData = aggregateMedals(data.value)
 
 const chartData = ref({
-  labels: ["Gold", "Silver", "Bronze"],
+  labels: ["Gold Medals", "Silver Medals", "Bronze Medals"],
   datasets: Object.entries(aggregatedData).map(([name, medals]) => ({
     label: name,
     data: [medals.gold, medals.silver, medals.bronze],
@@ -56,6 +56,20 @@ const chartOptions = {
     easing: "easeOutBounce"
   },
   plugins: {
+    title: {
+      align: 'start',
+      display: true,
+      text: "Olympian Medal Counts in Each Category",
+      color: '#111827',
+      letterSpacing: 2,
+      font: {
+        size: 20,
+        family: 'Rakkas',
+      },
+      padding: {
+        bottom: 16
+      }
+    },
     legend: {
       display: false,
     }
